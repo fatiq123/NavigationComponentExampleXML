@@ -47,7 +47,9 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/chooseRecipientFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/viewBalanceFragment"
@@ -59,17 +61,38 @@
         android:name="com.example.navigationcomponentexample.fragments.SpecifyFragment"
         android:label="fragment_specify"
         tools:layout="@layout/fragment_specify">
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+
         <action
             android:id="@+id/action_specifyFragment_to_confirmationFragment"
             app:destination="@id/confirmationFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/specifyFragment"
+            app:popUpToInclusive="true" />
+
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.example.navigationcomponentexample.fragments.ConfirmationFragment"
         android:label="fragment_confirmation"
-        tools:layout="@layout/fragment_confirmation" />
+        tools:layout="@layout/fragment_confirmation">
+        <action
+            android:id="@+id/action_confirmationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+        <argument
+            android:name="amount"
+            app:argType="com.example.navigationcomponentexample.model.Money" />
+
+    </fragment>
+
 </navigation>
