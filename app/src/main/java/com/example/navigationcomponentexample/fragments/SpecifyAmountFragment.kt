@@ -16,7 +16,7 @@ import com.example.navigationcomponentexample.R
 import com.example.navigationcomponentexample.model.Money
 import java.math.BigDecimal
 
-class SpecifyFragment : Fragment(), View.OnClickListener {
+class SpecifyAmountFragment : Fragment(), View.OnClickListener {
 
     private lateinit var navController: NavController
     private lateinit var recipient: String
@@ -33,7 +33,7 @@ class SpecifyFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_specify, container, false)
+        return inflater.inflate(R.layout.fragment_specify_amount, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class SpecifyFragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.send_btn).setOnClickListener(this)
         amount = view.findViewById(R.id.input_amount)
 
-        val message = "Sending monet to $recipient"
+        val message = "Sending money to $recipient"
         view.findViewById<TextView>(R.id.recipient).text = message
     }
 

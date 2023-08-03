@@ -31,6 +31,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
         android:id="@+id/viewTransactionFragment"
         android:name="com.example.navigationcomponentexample.fragments.ViewTransactionFragment"
@@ -51,6 +52,7 @@
             app:popUpTo="@id/chooseRecipientFragment"
             app:popUpToInclusive="true" />
     </fragment>
+
     <fragment
         android:id="@+id/viewBalanceFragment"
         android:name="com.example.navigationcomponentexample.fragments.ViewBalanceFragment"
@@ -58,10 +60,12 @@
         tools:layout="@layout/fragment_view_balance" />
     <fragment
         android:id="@+id/specifyFragment"
-        android:name="com.example.navigationcomponentexample.fragments.SpecifyFragment"
+        android:name="com.example.navigationcomponentexample.fragments.SpecifyAmountFragment"
         android:label="fragment_specify"
-        tools:layout="@layout/fragment_specify">
+        tools:layout="@layout/fragment_specify_amount">
 
+        <!--this fragment has to receive recipient name from
+        ChooseRecipientFragment that's why we have argument here-->
         <argument
             android:name="recipient"
             android:defaultValue="None" />
@@ -77,6 +81,7 @@
             app:popUpToInclusive="true" />
 
     </fragment>
+
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.example.navigationcomponentexample.fragments.ConfirmationFragment"
